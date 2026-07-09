@@ -1,0 +1,55 @@
+{
+  "name": "kolisbuddy",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/electron/main.js",
+  "homepage": "./",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "electron": "tsc -b && vite build && tsc -p tsconfig.electron.json && node -e \"require('fs').copyFileSync('electron/package.json','dist/electron/package.json')\" && electron .",
+    "electron-dev": "tsc -p tsconfig.electron.json && node -e \"require('fs').copyFileSync('electron/package.json','dist/electron/package.json')\" && electron .",
+    "pack": "electron-builder --dir",
+    "dist": "tsc -b && vite build && tsc -p tsconfig.electron.json && node -e \"require('fs').copyFileSync('electron/package.json','dist/electron/package.json')\" && electron-builder"
+  },
+  "dependencies": {
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.2",
+    "@types/node": "^24.13.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "electron": "^43.1.0",
+    "electron-builder": "^26.15.3",
+    "oxlint": "^1.71.0",
+    "postcss": "^8.5.16",
+    "tailwindcss": "^4.3.2",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.1"
+  },
+  "build": {
+    "appId": "com.kolisbuddy.app",
+    "productName": "Koli's Buddy",
+    "files": [
+      "dist/**/*",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
