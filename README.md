@@ -4,7 +4,7 @@
 
 # Koli's Buddy
 
-**A floating productivity timer for Windows — built for deep work.**
+**A floating productivity timer for Windows, built for deep work.**
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-6.0-3178C6?style=flat-square&logo=typescript&logoColor=white)
